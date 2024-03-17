@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery Exercises</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    /* Estilos opcionales para los ejercicios */
+    .hidden {
+        display: none;
+    }
+    .highlight {
+        background-color: yellow;
+    }
+    .reveal {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<!-- Ejercicio 1: Cambiar Color de los Párrafos -->
+<p>Este es el primer párrafo.</p>
+<p>Este es el segundo párrafo.</p>
+<p>Este es el tercer párrafo.</p>
+<button id="changeColorBtn1">Cambiar Color</button>
+
+<!-- Ejercicio 2: Ocultar y Mostrar un Elemento -->
+<div id="elementToHide" class="hidden">Este es el elemento que se ocultará.</div>
+<button id="showElementBtn">Mostrar Elemento</button>
+
+<!-- Ejercicio 3: Cambiar Texto de un Párrafo -->
+<p id="textToChange">Haz clic en el botón para cambiar este texto.</p>
+<button id="changeTextBtn">Cambiar Texto</button>
+
+<!-- Ejercicio 4: Cambiar Color de Fondo al Pasar el Mouse -->
+<ul>
+    <li>Elemento 1</li>
+    <li>Elemento 2</li>
+    <li>Elemento 3</li>
+</ul>
+
+<!-- Ejercicio 5: Revelar Contenido con Deslizamiento -->
+<div id="contentToSlide" class="reveal">
+    <p>Este es el contenido que se revelará.</p>
+</div>
+<button id="revealContentBtn">Revelar Contenido</button>
+
+<script>
+    // Ejercicio 1
+    $('#changeColorBtn1').click(function() {
+        $('p').css('color', 'blue');
+    });
+
+    // Ejercicio 2
+    $('#showElementBtn').click(function() {
+        $('#elementToHide').removeClass('hidden');
+    });
+
+    // Ejercicio 3
+    $('#changeTextBtn').click(function() {
+        $('#textToChange').text('El texto ha sido cambiado.');
+    });
+
+    // Ejercicio 4
+    $('li').mouseenter(function() {
+        $(this).addClass('highlight');
+    }).mouseleave(function() {
+        $(this).removeClass('highlight');
+    });
+
+    // Ejercicio 5
+    $('#revealContentBtn').click(function() {
+        $('#contentToSlide').slideDown();
+    });
+</script>
+
+</body>
+</html>
